@@ -47,8 +47,8 @@ function GradientBox({
 
   const gradientStyle = {
     background: `linear-gradient(to top, black, transparent), linear-gradient(to right, white, ${baseColor})`,
-    height: "200px",
-    width: "200px",
+    height: "360px",
+    width: "360px",
   };
 
   return (
