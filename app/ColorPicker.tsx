@@ -19,7 +19,6 @@ function GradientBox({
       y = 1 - y;
       // Clamp x and y within [0, 1]
       x = Math.max(0, Math.min(x, 1));
-      console.log(x);
       y = Math.max(0, Math.min(y, 1));
       const saturation = x;
       const value = y;
