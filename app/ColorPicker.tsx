@@ -31,18 +31,18 @@ function GradientBox({
   };
 
   const handleMouseDown = (event) => {
-    setIsDragging(true);
     updateColor(event);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
   };
 
   const handleMouseMove = (event) => {
-    if (isDragging) {
       updateColor(event);
-    }
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
   };
 
   const gradientStyle = {
@@ -56,8 +56,6 @@ function GradientBox({
       ref={gradientBoxRef}
       style={gradientStyle}
       onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
       className="custom-cursor"
     >
       {selectedPosition && (
